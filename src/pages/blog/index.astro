@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<Base title="Articles — Pauls Technical Services" description="Hands-on articles on Copilot agents, licensing, the Retrieval API, and Azure AI.">
+  <section class="hero" style="padding-bottom: 24px;">
+    <div class="wrap">
+      <p class="eyebrow">articles</p>
+      <h1>Notes from the build</h1>
+      <p class="lede muted">
+        Practical, tested write-ups on Copilot agent building, licensing and
+        costing, retrieval, and Azure AI — by me and invited contributors.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="border-top: none; padding-top: 24px;">
+    <div class="wrap">
+      <div class="post-list">
+        {posts.map((post) => (
+          <PostCard
+            href={`/blog/${post.id}/`}
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            author={post.data.author}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

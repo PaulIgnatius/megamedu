@@ -1,0 +1,34 @@
+# Decap CMS — web editor for articles at yourdomain.com/admin
+#
+# SETUP (one time, after pushing to GitHub):
+# 1. Replace YOUR_GITHUB_USER/YOUR_REPO below.
+# 2. Decap needs an OAuth handler. Easiest free option: deploy the
+#    "decap-oauth" Cloudflare Worker or an Azure Function OAuth proxy,
+#    then set base_url to it. See README.md → "Enable the CMS".
+# 3. Invite friends as GitHub collaborators on the repo — they log in
+#    with GitHub and get this editor. No coding needed.
+
+backend:
+  name: github
+  repo: YOUR_GITHUB_USER/YOUR_REPO
+  branch: main
+  # base_url: https://your-oauth-proxy.example.com   # uncomment after step 2
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Articles"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description (shown on cards & LinkedIn previews)", name: "description", widget: "text" }
+      - { label: "Publish date", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Author", name: "author", widget: "string", default: "Paul" }
+      - { label: "Author role", name: "authorRole", widget: "string", default: "Founder, Pauls Technical Services" }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }

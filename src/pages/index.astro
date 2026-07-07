@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import { Code } from 'astro:components';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const manifest = `{
+  "$schema": "declarative-agent/v1.4",
+  "name": "Paul",
+  "description": "Builds AI agents on the
+    Microsoft 365 & Azure platform",
+  "capabilities": [
+    { "name": "CopilotStudio" },
+    { "name": "AgentsSDK" },
+    { "name": "RetrievalAPI" },
+    { "name": "AzureAI" }
+  ],
+  "instructions": "Design, license,
+    govern and ship enterprise agents.
+    Then write about how it's done."
+}`;
+---
+<Base title="Paul — Microsoft 365 & AI Agent Solutions">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">portfolio · articles · agent engineering</p>
+        <h1>I build AI agents on Microsoft 365 <span class="accent">— and show my working.</span></h1>
+        <p class="lede">
+          I'm Paul, an AI Administrator and solution builder. This is where I publish
+          hands-on articles on Copilot agent building, licensing and costing, the
+          Retrieval API, and Azure AI — alongside the real projects they come from.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="/blog/">Read the articles</a>
+          <a class="btn btn-ghost" href="/portfolio/">See my work</a>
+        </div>
+      </div>
+      <div class="console-card">
+        <div class="console-bar">
+          <span>agent-manifest.json</span>
+          <span class="status">● deployed</span>
+        </div>
+        <Code code={manifest} lang="json" theme="one-dark-pro" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Latest articles</h2>
+        <a class="more" href="/blog/">all articles →</a>
+      </div>
+      <div class="post-list">
+        {posts.map((post) => (
+          <PostCard
+            href={`/blog/${post.id}/`}
+            title={post.data.title}
+            description={post.data.description}
+            pubDate={post.data.pubDate}
+            author={post.data.author}
+            tags={post.data.tags}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <a class="more" href="/portfolio/">full portfolio →</a>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <p class="stack">Azure · React · Cost modelling</p>
+          <h3>Visitor Gate Pass Management System</h3>
+          <p class="muted">
+            End-to-end design and delivery of a cloud-based visitor management
+            solution — from business requirements document to working prototype
+            and client-facing proposal.
+          </p>
+        </div>
+        <div class="project-card">
+          <p class="stack">Copilot Studio · Agents SDK · Governance</p>
+          <h3>Enterprise agent platform enablement</h3>
+          <p class="muted">
+            Standing up the foundations for safe agent adoption in a Microsoft
+            365 tenant: licensing strategy, RBAC scope, Entra Agent ID and
+            Purview governance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

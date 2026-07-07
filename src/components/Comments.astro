@@ -1,0 +1,33 @@
+---
+/*
+  Comments + reactions via Giscus (GitHub Discussions).
+  SETUP (5 minutes, one time):
+  1. Push this repo to GitHub and make it public (or use a separate public repo just for comments).
+  2. Enable "Discussions" in the repo settings.
+  3. Install the Giscus app: https://github.com/apps/giscus
+  4. Go to https://giscus.app — pick your repo, category "Announcements",
+     mapping "pathname", enable reactions.
+  5. Copy the generated data-repo, data-repo-id, data-category and
+     data-category-id values into the script tag below, then remove the
+     `hidden` attribute from the section.
+*/
+---
+<section class="comments" hidden>
+  <h2>Comments</h2>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="YOUR_GITHUB_USER/YOUR_REPO"
+    data-repo-id="REPLACE_ME"
+    data-category="Announcements"
+    data-category-id="REPLACE_ME"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+  ></script>
+</section>

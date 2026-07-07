@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Microsoft 365 & AI agent solutions — articles and projects by Paul.' } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/', label: 'home' },
+  { href: '/blog/', label: 'articles' },
+  { href: '/portfolio/', label: 'work' },
+  { href: '/about/', label: 'about' },
+];
+const isCurrent = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/"><span class="tick">~/</span>pauls-technical-services</a>
+        <nav class="site-nav" aria-label="Main">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div>
+          <strong>Pauls Technical Services</strong><br />
+          Microsoft 365 · Azure · AI agent solutions
+        </div>
+        <nav aria-label="Footer">
+          <a href="https://www.linkedin.com/" rel="me">linkedin</a>
+          <a href="https://github.com/" rel="me">github</a>
+          <a href="/rss.xml">rss</a>
+          <a href="mailto:hello@example.com">email</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
