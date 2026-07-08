@@ -28,7 +28,7 @@ collections:
       - { label: "Description (shown on cards & LinkedIn previews)", name: "description", widget: "text" }
       - { label: "Publish date", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "Author", name: "author", widget: "string", default: "Paul" }
-      - { label: "Author role", name: "authorRole", widget: "string", default: "Founder, Pauls Education" }
+      - { label: "Author role", name: "authorRole", widget: "string", default: "Founder, Pauls Workshop" }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
       - { label: "Body", name: "body", widget: "markdown" }

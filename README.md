@@ -1,4 +1,4 @@
-# Pauls Education — portfolio & articles site
+# Pauls Workshop — portfolio & articles site
 
 Built with [Astro](https://astro.build), designed for **Azure Static Web Apps** (free tier).
 Portfolio + multi-author technical blog with VS Code-quality syntax highlighting,

@@ -48,7 +48,7 @@
         },
         "authorRole": {
           "type": "string",
-          "default": "Founder, Pauls Education"
+          "default": "Founder, Pauls Workshop"
         },
         "tags": {
           "type": "array",

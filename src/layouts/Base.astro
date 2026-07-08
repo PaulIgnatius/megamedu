@@ -34,7 +34,7 @@ const isCurrent = (href: string) =>
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/"><span class="tick">~/</span>pauls-technical-services</a>
+        <a class="brand" href="/"><span class="tick">~/</span>pauls-technical-workshop</a>
         <nav class="site-nav" aria-label="Main">
           {nav.map((item) => (
             <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
@@ -50,7 +50,7 @@ const isCurrent = (href: string) =>
     <footer class="site-footer">
       <div class="wrap">
         <div>
-          <strong>Pauls Education</strong><br />
+          <strong>Pauls Workshop</strong><br />
           Microsoft 365 · Azure · AI agent solutions
         </div>
         <nav aria-label="Footer">
