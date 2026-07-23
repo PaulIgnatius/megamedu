@@ -16,15 +16,31 @@ import Base from '../layouts/Base.astro';
   <section class="section" style="border-top: none; padding-top: 24px;">
     <div class="wrap project-grid">
       <div class="project-card">
-        <p class="stack">Azure · React · BRD · Proposal</p>
-        <h3>Visitor Gate Pass Management System</h3>
+        <p class="stack">SharePoint · Python · SQLite · scikit-learn</p>
+        <h3>IT Support Knowledge Base Mining</h3>
         <p class="muted">
-          Full design-and-delivery engagement for a cloud-based visitor
-          management system: business requirements document, solution
-          architecture on Azure, working React prototype, cost estimation,
-          and a client-ready proposal and quotation.
+          Turned six years and 146,000 raw IT tickets into a clean, reviewed
+          knowledge base — schema recon, ETL into SQLite, unsupervised
+          clustering, and LLM-drafted articles with a privacy safety net.
+          Foundation for the IT support agent below.
         </p>
-        <p class="muted"><strong>Role:</strong> Solution designer & developer</p>
+        <p class="muted"><strong>Role:</strong> Data engineer & pipeline author</p>
+        <p class="muted"><a class="more" href="/blog/blog-mining-tickets-into-knowledge/">Read the article →</a></p>
+      </div>
+
+      <div class="project-card">
+        <p class="stack">React Native · Expo · .NET API · Azure</p>
+        <h3>Greenport — Environmental Compliance Platform</h3>
+        <p class="muted">
+          Cross-platform (web + iOS/Android) compliance logging app for
+          multi-client, multi-site environmental data capture: waste
+          tracking, energy/water logs, observations, and package-status
+          workflows. Built end-to-end — React Native/Expo front end, .NET
+          API on Azure App Service, Logic Apps and WebJobs for automation,
+          Entra B2C auth, and Key Vault-secured data access.
+        </p>
+        <p class="muted"><strong>Role:</strong> Full-stack developer (front end, API, and Azure infrastructure)</p>
+        <p class="muted"><a class="more" href="https://www.keo.com/greenport" target="_blank" rel="noopener noreferrer">View product →</a></p>
       </div>
 
       <div class="project-card">
@@ -39,6 +55,50 @@ import Base from '../layouts/Base.astro';
       </div>
 
       <div class="project-card">
+        <p class="stack">SPFx · React · Fluent UI · PnPjs</p>
+        <h3>KEO Holiday Calendar (SharePoint Web Part)</h3>
+        <p class="muted">
+          A reusable SharePoint Framework web part that surfaces company
+          holidays across SharePoint, Teams, and Outlook — pulling from a
+          SharePoint list via PnPjs, with multi-country flag support,
+          tentative-vs-confirmed styling, date-range filtering, and both a
+          compact "Home" view and a filterable "Detail" view. Fully
+          configurable through the property pane — no code changes needed
+          to reuse across sites.
+        </p>
+        <p class="muted"><strong>Role:</strong> Solo developer</p>
+      </div>
+
+      <div class="project-card">
+        <p class="stack">SPFx · React · Fluent UI · Graph Toolkit</p>
+        <h3>KEO Greetings (SharePoint Web Part)</h3>
+        <p class="muted">
+          A SharePoint Framework web part that celebrates employee birthdays
+          and work anniversaries — pulls from a SharePoint list, renders
+          Persona cards with photos via Microsoft Graph Toolkit grouped as
+          Today / Tomorrow / Upcoming, tabbed Birthdays/Anniversaries views,
+          and a confetti animation for the day's birthdays. Fully
+          configurable through the property pane.
+        </p>
+        <p class="muted"><strong>Role:</strong> Solo developer</p>
+      </div>
+
+      <div class="project-card">
+        <p class="stack">Python · python-docx · Azure Blob Storage · matplotlib</p>
+        <h3>Compliance Report Automation (Azure WebJob)</h3>
+        <p class="muted">
+          A Python Azure WebJob that generates a monthly compliance report
+          end-to-end: pulls consolidated log data (observations, energy,
+          water, wastewater, waste, hazardous materials, training, and
+          environmental monitoring) from an API, builds bar, pie, and
+          wind-rose charts, fills a Word template via a custom
+          placeholder-replacement engine, then uploads the finished report
+          to Azure Blob Storage and emails it to the requester.
+        </p>
+        <p class="muted"><strong>Role:</strong> Solo developer</p>
+      </div>
+
+      <div class="project-card">
         <p class="stack">Copilot Studio · Agents SDK · Foundry</p>
         <h3>Agent build lab (in progress)</h3>
         <p class="muted">
@@ -47,6 +107,18 @@ import Base from '../layouts/Base.astro';
           the articles section as it happens.
         </p>
         <p class="muted"><strong>Role:</strong> Builder & author</p>
+      </div>
+
+      <div class="project-card">
+        <p class="stack">Azure · React · BRD · Proposal</p>
+        <h3>Visitor Gate Pass Management System</h3>
+        <p class="muted">
+          Full design-and-delivery engagement for a cloud-based visitor
+          management system: business requirements document, solution
+          architecture on Azure, working React prototype, cost estimation,
+          and a client-ready proposal and quotation.
+        </p>
+        <p class="muted"><strong>Role:</strong> Solution designer & developer</p>
       </div>
     </div>
   </section>
